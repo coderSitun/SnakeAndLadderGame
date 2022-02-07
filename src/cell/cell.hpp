@@ -6,7 +6,7 @@ private:
     unsigned int nextPosition;
 public:
     unsigned int moveToNextPosition();
-    void SetNextPosition(unsigned int nextPosition);
+    void setNextPosition(unsigned int nextPosition);
 };
 
 #endif
