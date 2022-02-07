@@ -5,7 +5,7 @@ class Dice{
 private:
     unsigned int numberOfFaces;
 public:
-    Dice(unsigned int numberOfFaces);
+    Dice(unsigned int numberOfFaces = 6);
     unsigned int rollDice();
 };
 
