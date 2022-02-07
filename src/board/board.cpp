@@ -1,5 +1,15 @@
 #include"board.hpp"
 
+bool Board::detectLoop(unsigned int currentPosition, unsigned int nextPosition){
+    unsigned int tempPosition;
+    while((tempPosition = cells[nextPosition]->moveToNextPosition()) != std::numeric_limits<unsigned int>::max()){
+        if(currentPosition == tempPosition)
+            return true;
+        nextPosition = tempPosition;
+    }
+    return false;
+}
+
 Board::Board(unsigned int maximumCells){
     for(unsigned int index = 0; index < maximumCells; ++index){
         cells.push_back(new Cell());
