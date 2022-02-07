@@ -13,6 +13,7 @@ public:
     void addSnake(unsigned int head, unsigned int tail);
     void addLadder(unsigned int bottom, unsigned int top);
     unsigned int move(unsigned int currentPosition, unsigned int diceNumber);
+    ~Board();
 };
 
 #endif

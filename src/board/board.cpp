@@ -43,3 +43,9 @@ unsigned int Board::move(unsigned int currentPosition, unsigned int diceNumber){
     else
         return currentPosition;    
 }
+
+Board::~Board(){
+    for(unsigned int index = 0; index < cells.size(); ++index){
+        delete cells[index];
+    }
+}
