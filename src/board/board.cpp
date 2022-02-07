@@ -16,6 +16,22 @@ Board::Board(unsigned int maximumCells){
     }
 }
 
+void Board::addSnake(unsigned int head, unsigned int tail){
+    if((cells.size() > head) && (head > tail)){
+        if(!detectLoop(head, tail)){
+            cells[head]->setNextPosition(tail);
+        }
+    }
+}
+
+void Board::addLadder(unsigned int bottom, unsigned int top){
+    if((cells.size() > top) && (top > bottom)){
+        if(!detectLoop(bottom, top)){
+            cells[bottom]->setNextPosition(top);
+        }
+    }
+}
+
 unsigned int Board::move(unsigned int currentPosition, unsigned int diceNumber){
     unsigned int nextPosition = currentPosition + diceNumber;
     if(nextPosition < cells.size()){
