@@ -5,3 +5,15 @@ Board::Board(unsigned int maximumCells){
         cells.push_back(new Cell());
     }
 }
+
+unsigned int Board::move(unsigned int currentPosition, unsigned int diceNumber){
+    unsigned int nextPosition = currentPosition + diceNumber;
+    if(nextPosition < cells.size()){
+        unsigned int tempPosition;
+        while((tempPosition = cells[nextPosition]->moveToNextPosition()) != std::numeric_limits<unsigned int>::max())
+            nextPosition = tempPosition;
+        return nextPosition;
+    }
+    else
+        return currentPosition;    
+}

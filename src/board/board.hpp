@@ -9,7 +9,7 @@ private:
     std::vector<Cell*> cells;
 public:
     Board(unsigned int maximumCells = 100);
-    unsigned int move(unsigned int diceNumber);
+    unsigned int move(unsigned int currentPosition, unsigned int diceNumber);
 };
 
 #endif
