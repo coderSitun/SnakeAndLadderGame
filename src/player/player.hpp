@@ -5,6 +5,7 @@
 
 class Player{
 private:
+    static unsigned int totalPlayers;
     unsigned int playerId;
     unsigned int playerPosition;
     std::string playerName;
