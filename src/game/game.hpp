@@ -10,7 +10,8 @@ class Game{
 private:
     enum GameStatus{
         IDLE,
-        RUNNING
+        RUNNING,
+        OVER
     };
     GameStatus status;
     Board *board;
