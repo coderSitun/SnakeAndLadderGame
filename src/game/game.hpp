@@ -17,6 +17,7 @@ private:
     Board *board;
     std::vector<Player*> players;
     Dice *dice;
+    unsigned int winnerId;
 public:
     Game();
     void addPlayer(std::string playerName);
