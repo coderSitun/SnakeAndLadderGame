@@ -2,7 +2,7 @@
 
 bool Board::detectLoop(unsigned int currentPosition, unsigned int nextPosition){
     unsigned int tempPosition;
-    while((tempPosition = cells[nextPosition]->moveToNextPosition()) != std::numeric_limits<unsigned int>::max()){
+    while((tempPosition = cells[nextPosition]->moveToNextPosition()) != maximumCells){
         if(currentPosition == tempPosition)
             return true;
         nextPosition = tempPosition;
@@ -11,8 +11,9 @@ bool Board::detectLoop(unsigned int currentPosition, unsigned int nextPosition){
 }
 
 Board::Board(unsigned int maximumCells){
+    this->maximumCells = maximumCells;
     for(unsigned int index = 0; index < maximumCells; ++index){
-        cells.push_back(new Cell());
+        cells.push_back(new Cell(maximumCells));
     }
 }
 
@@ -36,7 +37,7 @@ unsigned int Board::move(unsigned int currentPosition, unsigned int diceNumber){
     unsigned int nextPosition = currentPosition + diceNumber;
     if(nextPosition < cells.size()){
         unsigned int tempPosition;
-        while((tempPosition = cells[nextPosition]->moveToNextPosition()) != std::numeric_limits<unsigned int>::max())
+        while((tempPosition = cells[nextPosition]->moveToNextPosition()) != maximumCells)
             nextPosition = tempPosition;
         return nextPosition;
     }

@@ -6,6 +6,7 @@
 
 class Board{
 private:
+    unsigned int maximumCells;
     std::vector<Cell*> cells;
     bool detectLoop(unsigned int currentPosition, unsigned int nextPosition);
 public:

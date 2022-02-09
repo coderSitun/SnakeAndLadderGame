@@ -1,13 +1,11 @@
 #ifndef __CELL
 #define __CELL
 
-#include<limits>
-
 class Cell{
 private:
     unsigned int nextPosition;
 public:
-    Cell(unsigned int nextPosition = std::numeric_limits<unsigned int>::max());
+    Cell(unsigned int nextPosition);
     unsigned int moveToNextPosition();
     void setNextPosition(unsigned int nextPosition);
 };
