@@ -1,7 +1,7 @@
 #ifndef __GAME
 #define __GAME
 
-#include<list>
+#include<vector>
 #include"board.hpp"
 #include"player.hpp"
 #include"dice.hpp"
@@ -15,7 +15,7 @@ private:
     };
     GameStatus status;
     Board *board;
-    std::list<Player*> players;
+    std::vector<Player*> players;
     Dice *dice;
 public:
     Game();
