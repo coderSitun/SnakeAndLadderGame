@@ -10,6 +10,14 @@ void Game::addPlayer(std::string playerName){
     players.push_back(new Player(playerName));
 }
 
+void Game::addSnake(unsigned int head, unsigned int tail){
+    board->addSnake(head, tail);
+}
+
+void Game::addLadder(unsigned int bottom, unsigned int top){
+    board->addSnake(bottom, top);
+}
+
 std::string Game::getWinner(){
     switch(status)
     {

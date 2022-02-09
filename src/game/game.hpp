@@ -21,6 +21,8 @@ private:
 public:
     Game();
     void addPlayer(std::string playerName);
+    void addSnake(unsigned int head, unsigned int tail);
+    void addLadder(unsigned int bottom, unsigned int top);
     void startGame();
     std::string getWinner();
     ~Game();
