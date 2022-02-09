@@ -30,3 +30,8 @@ std::string Game::getWinner(){
     }
     return "";
 }
+
+Game::~Game(){
+    delete board;
+    delete dice;
+}
