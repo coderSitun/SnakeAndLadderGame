@@ -8,6 +8,11 @@
 
 class Game{
 private:
+    enum GameStatus{
+        IDLE,
+        RUNNING
+    };
+    GameStatus status;
     Board *board;
     std::list<Player*> players;
     Dice *dice;
